@@ -1,0 +1,10 @@
+.hero{
+    display: flex;
+    height: 270px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    position: relative;
+    right: 2.5rem;
+}
