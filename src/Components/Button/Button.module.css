@@ -1,0 +1,16 @@
+.btn{
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.25px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.2s; 
+}
+
+.btn:active{
+    transform: scale(0.9);
+}

@@ -1,0 +1,24 @@
+.searchBarWrapper{
+    display: flex;
+    height: 48px;
+    align-items: stretch;
+    width: 568px;
+}
+
+.search{
+    padding: 14px 20px;
+    height: 100%;
+    border-radius: 8px 0px 0px 8px;
+    flex-grow: 1;
+    border: 1px solid var(--color-black);
+}
+
+.searchButton{
+    border-radius: 0px 8px 8px 0px;
+    padding: 14px 20px;
+    border: 1px solid var(--color-black);
+    border-left: none;
+    cursor: pointer;
+    height: 100%;
+
+}
