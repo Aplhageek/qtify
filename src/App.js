@@ -3,8 +3,8 @@ import NavBar from './Components/NavBar/NavBar';
 import Hero from './Components/Hero/Hero'
 import fetchTopAlbums from './api/api';
 import { useEffect, useState } from 'react';
-import Section from './Components/Section/Section';
 import Card from './Components/Card/Card';
+import Section from './Components/Section/Section';
 
 
 function App() {
@@ -31,11 +31,9 @@ function App() {
       
       <Hero/>
 
-      {topAlbums.map(item =>{
-        return <Card key={item.id} data={item} type='album'/>
-      })}
-
-      {/* <Section title={"Top Albums"} data={topAlbums} /> */}
+      <div>           
+      <Section title={"Top Albums"} data={topAlbums} />
+      </div>
     </div>
   );
 }

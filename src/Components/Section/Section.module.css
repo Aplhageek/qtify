@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.toggleText{
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: transform 0.1s;
+    text-align: center;
+
+}
+
+.toggleText:active{
+    transform: scale(0.9);
+}
+
+.cardWrapper{
+    margin-top: 18px;
+}
