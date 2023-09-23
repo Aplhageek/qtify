@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Section.module.css';
 import { CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
+import Carousel from '../Carousel/Carousel';
 
 const Section = ({ title, data }) => {
     const [caraousalToggle, setCarousalToggle] = useState(true);
@@ -11,7 +12,7 @@ const Section = ({ title, data }) => {
     }
 
     return (
-        <section>
+        <section className={styles.sectionWrapper}>
             <div className={styles.header}>
                 <h3>{title}</h3>
                 <h4 className={styles.toggleText} onClick={handleToggle}> {caraousalToggle ? "Show All" : "Collapse ALL"} </h4>
@@ -19,7 +20,7 @@ const Section = ({ title, data }) => {
             <div className={styles.loading}>
 
                 {
-                    data?.length == 0 ? <CircularProgress /> :
+                    data?.length === 0 ? <CircularProgress /> :
 
                         (
                             <div className={styles.cardWrapper}>
@@ -28,7 +29,9 @@ const Section = ({ title, data }) => {
                                         {data.map(item => <Card key={item.id} data={item} type="album" />)}
                                     </div>
                                     :
-                                    (null)}
+                                    (   
+                                        <Carousel data={data} componentRender={(ele) => <Card key={ele.id} data={ele} type="album" /> } /> 
+                                    )}
                             </div>
                         )
                 }

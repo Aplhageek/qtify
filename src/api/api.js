@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const BACKEND_ENDPOINT = 'https://qtify-backend-labs.crio.do/';
 
-const fetchTopAlbums = async () => {
+const fetchTopAlbums = async (path) => {
   try{
-    const res = await axios.get(`${BACKEND_ENDPOINT}/albums/top`);
+    const res = await axios.get(`${BACKEND_ENDPOINT}/${path}`);
     return res;
   }catch(err){
     console.log(err);

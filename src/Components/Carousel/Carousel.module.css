@@ -1,0 +1,21 @@
+.wrapper{
+    position: relative;
+}
+
+.rigthNavigation{
+    position: absolute; 
+    display: inline-block;
+    top: 40%;
+    right: 20px;
+    transform: translateY(-50% ) ;
+    z-index: 10;
+}
+
+.leftNavigation{
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    top: 40%;
+    transform: translate(-50%);
+    z-index: 10;
+}
