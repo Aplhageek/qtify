@@ -6,7 +6,7 @@
     position: absolute; 
     display: inline-block;
     top: 40%;
-    right: 20px;
+    right: 13px;
     transform: translateY(-50% ) ;
     z-index: 10;
 }

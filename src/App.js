@@ -7,10 +7,13 @@ import Card from './Components/Card/Card';
 import Section from './Components/Section/Section';
 
 const topAlbumsPath = "albums/top";
+const newAlbumsPath = "albums/new";
 
 
 function App() {
   const [topAlbums, setTopAlbums]  = useState([]);
+  const [newAlbums, setNewAlbums]  = useState([]);
+
   
   const generateData = async (path, stateUpdater) =>{
     try{
@@ -25,6 +28,7 @@ function App() {
 
   useEffect(()=>{
     generateData(topAlbumsPath, setTopAlbums);
+    generateData(newAlbumsPath, setNewAlbums);
   }, []);
   
   return (
@@ -35,6 +39,8 @@ function App() {
       <Hero/>
 
       <Section title={"Top Albums"} data={topAlbums} />
+      <Section title={"New Albums"} data={newAlbums} />
+      <div className="line"></div>
 
     </div>
   );
