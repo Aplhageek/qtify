@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BACKEND_ENDPOINT = 'https://qtify-backend-labs.crio.do/';
 
-const fetchTopAlbums = async (path) => {
+const getDataFromApi = async (path) => {
   try{
     const res = await axios.get(`${BACKEND_ENDPOINT}/${path}`);
     return res;
@@ -10,5 +10,5 @@ const fetchTopAlbums = async (path) => {
     console.log(err);
   }
 }
-
-export default fetchTopAlbums;
+ 
+export default getDataFromApi;

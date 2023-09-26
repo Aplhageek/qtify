@@ -3,8 +3,9 @@ import styles from './Section.module.css';
 import { CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
 import Carousel from '../Carousel/Carousel';
+import Tab from '../Tabs/Tab';
 
-const Section = ({ title, data }) => {
+const Section = ({ title, data, toggle, listOfGenre, handleSelect }) => {
     const [caraousalToggle, setCarousalToggle] = useState(true);
 
     const handleToggle = () => {
@@ -15,7 +16,12 @@ const Section = ({ title, data }) => {
         <section className={styles.sectionWrapper}>
             <div className={styles.header}>
                 <h3>{title}</h3>
-                <h4 className={styles.toggleText} onClick={handleToggle}> {caraousalToggle ? "Show All" : "Collapse ALL"} </h4>
+                {toggle && <h4 className={styles.toggleText} onClick={handleToggle}> {caraousalToggle ? "Show All" : "Collapse ALL"} </h4>}
+            </div>
+            <div className={styles.tab_container}>
+                {!toggle && <Tab  listOfGenre={listOfGenre} handleSelect={handleSelect}/>
+
+                }
             </div>
             <div className={styles.loading}>
 

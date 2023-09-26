@@ -11,7 +11,7 @@ const Card = ({data, type}) => {
                 return (
                     <div className={styles.cardWrapper}>
                         <div className={styles.card}>
-                            <img src={image} alt="album" />
+                            <img src={image} alt="album" className={styles.card_img} />
                             <div className={styles.banner}>
                                 <p className={styles.cardFollows}>
                                     {`${follows} Follows`}
