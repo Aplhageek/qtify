@@ -20,8 +20,7 @@ export default function BasicAccordion() {
         </AccordionSummary>
         <AccordionDetails >
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Yes! It is 100% free, and has 0% ads!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -36,8 +35,7 @@ export default function BasicAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Sorry, unfortunately we don't provide the service to download any songs.
           </Typography>
         </AccordionDetails>
       </Accordion>

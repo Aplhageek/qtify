@@ -1,6 +1,6 @@
 .question_text{
 font-weight: 00 !important; 
-padding: 3px 10px;
+padding: 3px 0px;
 font-size: 16px !important;
 letter-spacing: 1px;
 color: var(--color-white);
@@ -9,7 +9,7 @@ color: var(--color-white);
 .accordion_parent{
     /* background-color: var(--color-black) !important; */
     border-radius: 10px !important;
-
+    text-align: start;
 }
 
 /* --color-black */
