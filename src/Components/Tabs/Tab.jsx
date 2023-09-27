@@ -11,7 +11,7 @@ const Tab = ({ listOfGenre, handleSelect }) => {
       <div
         className={`${styles.tab} ${selectedTab === 'All' ? styles.selected : ''}`}
         onClick={(event) => {
-          handleSelect(event, "All", 100);
+          handleSelect(event, "All" );
           setSelectedTab("All");
         }}
       >
@@ -26,7 +26,7 @@ const Tab = ({ listOfGenre, handleSelect }) => {
               className={`${styles.tab} ${selectedTab === item.key ? styles.selected : ''}`}
               key={index}
               onClick={(event) => {
-                handleSelect(event, item.key, index);
+                handleSelect(event, item.key);
                 setSelectedTab(item.key);
               }
               }

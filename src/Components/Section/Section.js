@@ -1,16 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Section.module.css';
 import { CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
 import Carousel from '../Carousel/Carousel';
 import Tab from '../Tabs/Tab';
 
-const Section = ({ title, data, toggle, listOfGenre, handleSelect }) => {
+const Section = ({ title, data, toggle, listOfGenre }) => {
     const [caraousalToggle, setCarousalToggle] = useState(true);
+    const [genreKey, setGenreKey] = useState("All");
+    const [filteredSongs, setFilteredSongs] = useState({});
+    
+    const handleSelect = (event, key) => {
+        event.preventDefault();
+        setGenreKey(key);
+    }
 
     const handleToggle = () => {
         setCarousalToggle(!caraousalToggle);
     }
+
+    const filterSongsByGenre = (allSongs, allGenres) => {
+        allGenres?.forEach(genre => {
+          let currKey = genre.key;
+          const newArray = allSongs.filter(song => song.genre.key === currKey);
+          setFilteredSongs(prev => ({ ...prev, [currKey]: newArray }))
+        });
+    }
+
+      useEffect(() => {
+        filterSongsByGenre(data, listOfGenre);
+        
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [genreKey]);
 
     return (
         <section className={styles.sectionWrapper}>
@@ -18,11 +39,13 @@ const Section = ({ title, data, toggle, listOfGenre, handleSelect }) => {
                 <h3>{title}</h3>
                 {toggle && <h4 className={styles.toggleText} onClick={handleToggle}> {caraousalToggle ? "Show All" : "Collapse ALL"} </h4>}
             </div>
+
             <div className={styles.tab_container}>
                 {!toggle && <Tab  listOfGenre={listOfGenre} handleSelect={handleSelect}/>
 
                 }
             </div>
+
             <div className={styles.loading}>
 
                 {
@@ -36,7 +59,7 @@ const Section = ({ title, data, toggle, listOfGenre, handleSelect }) => {
                                     </div>
                                     :
                                     (   
-                                        <Carousel data={data} componentRender={(ele) => <Card key={ele.id} data={ele} type="album" /> } /> 
+                                        <Carousel data={genreKey === "All" ? (data) : (filteredSongs[genreKey]) } componentRender={(ele) => <Card key={ele.id} data={ele} type="album" /> } /> 
                                     )}
                             </div>
                         )

@@ -1,0 +1,28 @@
+.question_text{
+font-weight: 00 !important; 
+padding: 3px 10px;
+font-size: 16px !important;
+letter-spacing: 1px;
+color: var(--color-white);
+}
+
+.accordion_parent{
+    /* background-color: var(--color-black) !important; */
+    border-radius: 10px !important;
+
+}
+
+/* --color-black */
+
+.accordion_summury{
+    background-color: var(--color-black) !important;
+    
+    /* margin: 0; */
+    border: 1px solid #FFF !important;
+    border-radius: 10px !important;
+    height: 68px;
+}
+
+.accordion_arrow{
+    height: 15px !important;
+}

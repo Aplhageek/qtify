@@ -1,7 +1,7 @@
 :root {
   --color-primary : #34c94b;
   --color-black : #121212;
-  --color-white : #FFFFFF;
+  --color-white : #FFFFF0;
 }
 
 
@@ -19,10 +19,7 @@ html, body{
   height: 100%;
 }
 
-html{
-  /* font-size: 10px; */
-  /* scrollbar-gutter: stable; */
-}
+
 
 body{
   font-family: 'Poppins', sans-serif;

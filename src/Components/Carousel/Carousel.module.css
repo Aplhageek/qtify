@@ -6,7 +6,7 @@
     position: absolute; 
     display: inline-block;
     top: 40%;
-    right: 13px;
+    right: 20px;
     transform: translateY(-50% ) ;
     z-index: 10;
 }
@@ -15,7 +15,7 @@
     cursor: pointer;
     position: absolute;
     left: 25px;
-    top: 40%;
+    top: 30%;
     transform: translate(-50%);
     z-index: 10;
 }
