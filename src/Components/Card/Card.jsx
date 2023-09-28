@@ -2,13 +2,8 @@ import React from 'react'
 import styles from './Card.module.css';
 import Tooltip from '@mui/material/Tooltip';
 
-
-const Card = ({data, type}) => {
-    console.log(data.songs , "sonsssssssssssssssssssssssssssssssss");
-    const getCard = (type) => {
-        switch(type){
-            case 'album' : {
-                const {image,follows, title, songs} = data;
+const Card = ({data}) => {
+    const {image,follows, title, songs} = data;
                 return (
                     <Tooltip title={songs?.length} placement="top" arrow >
                     <div className={styles.cardWrapper}>
@@ -23,13 +18,7 @@ const Card = ({data, type}) => {
                         <div className={styles.cardTitle}>{title}</div>
                     </div>
                     </Tooltip>
-                )
-            }
-            default: return <></>;
-        }
-    }
-
-    return getCard(type);
+                );
 }
 
 export default Card;
