@@ -33,12 +33,15 @@ function App() {
     }
   }
 
+
+
   useEffect(() => {
     generateData(topAlbumsPath, setTopAlbums);
     generateData(newAlbumsPath, setNewAlbums);
     generateData(songsPath, setAllSongs);
     generateData(genresPath, setAllGenres);
   }, []);
+
 
   return (
     <div className="App">
@@ -47,12 +50,11 @@ function App() {
 
       <Hero />
 
-      <Section title={"Top Albums"} data={topAlbums} toggle={true} />
       <Section title={"New Albums"} data={newAlbums} toggle={true} />
+      <Section title={"Top Albums"} data={topAlbums} toggle={true} />
       <div className="line"></div>
 
       <Section title={"Songs"} data={allSongs } toggle={false} listOfGenre={allGenres}  />
-      {/* handleSelect={handleSelect} key={genreKey} */}
 
       <Faq/>
     </div>

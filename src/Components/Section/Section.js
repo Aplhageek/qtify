@@ -5,11 +5,14 @@ import Card from '../Card/Card';
 import Carousel from '../Carousel/Carousel';
 import Tab from '../Tabs/Tab';
 
-const Section = ({ title, data, toggle, listOfGenre }) => {
+const Section = ({ title, data, toggle ,  listOfGenre  }) => {
     const [caraousalToggle, setCarousalToggle] = useState(true);
     const [genreKey, setGenreKey] = useState("All");
     const [filteredSongs, setFilteredSongs] = useState({});
 
+    // console.log('Section ttttttttttttttttoggle:', toggle);
+
+    
     const handleSelect = (event, key) => {
         event.preventDefault();
         setGenreKey(key);
@@ -21,17 +24,17 @@ const Section = ({ title, data, toggle, listOfGenre }) => {
 
     const filterSongsByGenre = (allSongs, allGenres) => {
         allGenres?.forEach(genre => {
-            let currKey = genre.key;
-            const newArray = allSongs.filter(song => song.genre.key === currKey);
-            setFilteredSongs(prev => ({ ...prev, [currKey]: newArray }))
+          let currKey = genre.key;
+          const newArray = allSongs.filter(song => song.genre.key === currKey);
+          setFilteredSongs(prev => ({ ...prev, [currKey]: newArray }))
         });
     }
 
-    useEffect(() => {
+      useEffect(() => {
         filterSongsByGenre(data, listOfGenre);
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [genreKey]);
+        
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [genreKey]);
 
     return (
         <section className={styles.sectionWrapper}>
@@ -41,7 +44,7 @@ const Section = ({ title, data, toggle, listOfGenre }) => {
             </div>
 
             <div className={styles.tab_container}>
-                {!toggle && <Tab listOfGenre={listOfGenre} handleSelect={handleSelect} />
+                {!toggle && <Tab  listOfGenre={listOfGenre} handleSelect={handleSelect}/>
 
                 }
             </div>
@@ -55,11 +58,11 @@ const Section = ({ title, data, toggle, listOfGenre }) => {
                             <div className={styles.cardWrapper}>
                                 {!caraousalToggle ?
                                     <div className={styles.wrapper}>
-                                        {data.map(item => <Card key={item.id} data={item} />)}
+                                        {data.map(item => <Card key={item.id} data={item} bool={toggle} />)}
                                     </div>
                                     :
-                                    (
-                                        <Carousel data={genreKey === "All" ? (data) : (filteredSongs[genreKey])} componentRender={(ele) => <Card key={ele.id} data={ele} type="album" />} />
+                                    (   
+                                        <Carousel data={genreKey === "All" ? (data) : (filteredSongs[genreKey]) } componentRender={(ele) => <Card key={ele.id} data={ele} bool={toggle}/> } /> 
                                     )}
                             </div>
                         )
